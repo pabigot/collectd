@@ -1235,6 +1235,17 @@ collectd_LDADD += "-dlopen" ted.la
 collectd_DEPENDENCIES += ted.la
 endif
 
+if BUILD_PLUGIN_TED5000
+pkglib_LTLIBRARIES += ted5000.la
+ted5000_la_SOURCES = ted5000.c
+ted5000_la_LDFLAGS = -module -avoid-version
+ted5000_la_CFLAGS = $(AM_CFLAGS) \
+		$(BUILD_WITH_LIBCURL_CFLAGS)
+ted5000_la_LIBADD = $(BUILD_WITH_LIBCURL_LIBS)
+collectd_LDADD += "-dlopen" ted5000.la
+collectd_DEPENDENCIES += ted5000.la
+endif
+
 if BUILD_PLUGIN_THERMAL
 pkglib_LTLIBRARIES += thermal.la
 thermal_la_SOURCES = thermal.c

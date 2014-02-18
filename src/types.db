@@ -20,6 +20,8 @@ compression		uncompressed:DERIVE:0:U, compressed:DERIVE:0:U
 connections		value:DERIVE:0:U
 conntrack		value:GAUGE:0:4294967295
 contextswitch		value:DERIVE:0:U
+cost			value:GAUGE:0:U
+cost_span		low:GAUGE:0:U, mean:GAUGE:0:U, high:GAUGE:0:U
 counter			value:COUNTER:U:U
 cpufreq			value:GAUGE:0:U
 cpu			value:DERIVE:0:U
@@ -192,9 +194,12 @@ vmpage_number		value:GAUGE:0:4294967295
 volatile_changes	value:GAUGE:0:U
 voltage_threshold	value:GAUGE:U:U, threshold:GAUGE:U:U
 voltage			value:GAUGE:U:U
+voltage_span		low:GAUGE:U:U, mean:GAUGE:U:U, high:GAUGE:U:U
 vs_memory		value:GAUGE:0:9223372036854775807
 vs_processes		value:GAUGE:0:65535
 vs_threads		value:GAUGE:0:65535
+watts			value:GAUGE:0:65535
+watts_span		low:GAUGE:0:65535, mean:GAUGE:0:65535, high:GAUGE:0:65535
 
 #
 # Legacy types

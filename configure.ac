@@ -4833,6 +4833,7 @@ plugin_swap="no"
 plugin_tape="no"
 plugin_tcpconns="no"
 plugin_ted="no"
+plugin_ted5000="no"
 plugin_thermal="no"
 plugin_users="no"
 plugin_uptime="no"
@@ -5068,6 +5069,11 @@ then
 	plugin_ted="yes"
 fi
 
+if test "x$with_libcurl" = "xyes"
+then
+	plugin_ted5000="yes"
+fi
+
 if test "x$have_thread_info" = "xyes"
 then
 	plugin_processes="yes"
@@ -5225,6 +5231,7 @@ AC_PLUGIN([target_v5upgrade], [yes],           [The v5upgrade target])
 AC_PLUGIN([tcpconns],    [$plugin_tcpconns],   [TCP connection statistics])
 AC_PLUGIN([teamspeak2],  [yes],                [TeamSpeak2 server statistics])
 AC_PLUGIN([ted],         [$plugin_ted],        [Read The Energy Detective values])
+AC_PLUGIN([ted5000],     [$plugin_ted5000],    [Read The Energy Detective 5000 values])
 AC_PLUGIN([thermal],     [$plugin_thermal],    [Linux ACPI thermal zone statistics])
 AC_PLUGIN([threshold],   [yes],                [Threshold checking plugin])
 AC_PLUGIN([tokyotyrant], [$with_libtokyotyrant],  [TokyoTyrant database statistics])

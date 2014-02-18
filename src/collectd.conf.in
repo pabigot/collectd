@@ -166,6 +166,7 @@
 #@BUILD_PLUGIN_TCPCONNS_TRUE@LoadPlugin tcpconns
 #@BUILD_PLUGIN_TEAMSPEAK2_TRUE@LoadPlugin teamspeak2
 #@BUILD_PLUGIN_TED_TRUE@LoadPlugin ted
+#@BUILD_PLUGIN_TED5000_TRUE@LoadPlugin ted5000
 #@BUILD_PLUGIN_THERMAL_TRUE@LoadPlugin thermal
 #@BUILD_PLUGIN_TOKYOTYRANT_TRUE@LoadPlugin tokyotyrant
 #@BUILD_PLUGIN_UNIXSOCK_TRUE@LoadPlugin unixsock
@@ -1054,6 +1055,15 @@
 #<Plugin ted>
 #	Device "/dev/ttyUSB0"
 #	Retries 0
+#</Plugin>
+
+#<Plugin ted5000>
+#	Interval "10"
+#	Hostname "ted5000"
+#	MTU "0"
+#	Watts "Aggregate"
+#	Cost "Exclude"
+#	Voltage "Aggregate"
 #</Plugin>
 
 #<Plugin thermal>

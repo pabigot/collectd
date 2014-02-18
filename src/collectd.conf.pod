@@ -5744,6 +5744,64 @@ Default: B<0>
 
 =back
 
+=head2 Plugin C<ted5000>
+
+The I<TED5000> plugin connects to a TED 5000, a device from "The
+Energy Detective" that monitors power consumption at the electrical
+panel.  This model provides an HTTP interface.  The plugin connects
+periodically and downloads the latest readings, which the TED 5000
+records at a one-second interval. For more information on TED, visit
+L<http://www.theenergydetective.com/>.
+
+Available configuration options:
+
+=over 4
+
+=item B<Interval> I<Seconds>
+
+The frequency with which collectd will request data from the device.
+The device has a very limited processor and responding to HTTP
+requests is computationally intense, so a value no less than 5 seconds
+is recommended.  If unset, the collectd default interval will be used.
+
+=item B<Hostname> I<Name>
+
+The hostname or IP address of the ted5000 device.
+
+Default: B<ted5000>
+
+=item B<MTU> I<Integer>
+
+The Measuring Transmitting Unit to query.
+
+Default: B<0>
+
+=item B<Watts> B<Exclude|Sample|Aggregate>
+
+Controls how power consumption in watts should be collected.  If
+B<Exclude>, no power consumption is collected.  If B<Sample>, the
+plugin attempts to dispatch each sample that the TED 5000 collected
+over the interval.  If B<Aggregate>, the plugin records the lowest,
+highest, and average sample collected over the interval.
+
+Default: B<Aggregate>
+
+=item B<Cost> B<Exclude|Sample|Aggregate>
+
+As with B<Watts> but controls collection of the TED 5000's cost
+estimation.
+
+Default: B<Exclude>
+
+=item B<Voltage> B<Exclude|Sample|Aggregate>
+
+As with B<Voltage> but controls collection of the TED 5000's
+measurement of (single-phase) line voltage.
+
+Default: B<Aggregate>
+
+=back
+
 =head2 Plugin C<tcpconns>
 
 The C<tcpconns plugin> counts the number of currently established TCP
